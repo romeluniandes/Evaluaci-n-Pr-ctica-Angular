@@ -1,0 +1,22 @@
+<div class="container-fluid ps-4 pe-4">
+  <div class="row">
+    <table class="table">
+      <thead class="table-dark">
+        <tr>
+          <th>#</th>
+          <th>Marca</th>
+          <th>Linea</th>
+          <th>Modelo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vehiculo of vehiculos; let i = index">
+          <th>{{ i }}</th>
+          <td>{{ vehiculo.marca }}</td>
+          <td>{{ vehiculo.linea }}</td>
+          <td>{{ vehiculo.modelo }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
