@@ -20,6 +20,21 @@ export class VehiculoListComponent implements OnInit {
     })
   }
 
+  calcularTotalVehiculosPorMarca(): { [marca: string]: number } {
+    const totalVehiculosPorMarca: { [marca: string]: number } = {};
+
+    // Iterar sobre la lista de vehículos y calcular el total por marca
+    this.vehiculos.forEach(vehiculo => {
+      if (totalVehiculosPorMarca[vehiculo.marca]) {
+        totalVehiculosPorMarca[vehiculo.marca]++;
+      } else {
+        totalVehiculosPorMarca[vehiculo.marca] = 1;
+      }
+    });
+
+    return totalVehiculosPorMarca;
+  }
+
   ngOnInit(): void {
     this.getVehiculoList()
   }

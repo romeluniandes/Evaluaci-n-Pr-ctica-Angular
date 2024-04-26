@@ -1,22 +1,29 @@
 <div class="container-fluid ps-4 pe-4">
   <div class="row">
-    <table class="table">
-      <thead class="table-dark">
+    <div class="col-8">
+      <table class="table w-100">
+        <thead class="table-dark">
         <tr>
           <th>#</th>
           <th>Marca</th>
           <th>Linea</th>
           <th>Modelo</th>
         </tr>
-      </thead>
-      <tbody>
+        </thead>
+        <tbody>
         <tr *ngFor="let vehiculo of vehiculos; let i = index">
           <th>{{ i }}</th>
           <td>{{ vehiculo.marca }}</td>
           <td>{{ vehiculo.linea }}</td>
           <td>{{ vehiculo.modelo }}</td>
         </tr>
-      </tbody>
-    </table>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+      <p *ngFor="let totalVehiculos of calcularTotalVehiculosPorMarca() | keyvalue">
+        Total {{ totalVehiculos.key }} : {{ totalVehiculos.value }}
+      </p>
   </div>
 </div>
