@@ -11,7 +11,15 @@ export class VehiculoListComponent implements OnInit {
 
   vehiculos: Array<Vehiculo> = [];
 
+  selectedVehiculo!: Vehiculo;
+  selected: Boolean = false;
+
   constructor(private vehiculoService: VehiculoService) {
+  }
+
+  onSelected(vehiculo: Vehiculo) {
+    this.selected = true;
+    this.selectedVehiculo = vehiculo;
   }
 
   getVehiculoList() {
